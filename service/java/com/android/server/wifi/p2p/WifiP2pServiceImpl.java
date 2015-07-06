@@ -2036,10 +2036,6 @@ public final class WifiP2pServiceImpl extends IWifiP2pManager.Stub {
                     }
                     break;
                 case WifiMonitor.P2P_PROV_DISC_PBC_REQ_EVENT:
-					// sapark
-                    // already connected device
-                    loge("##### (sapark) ignore connection ?");
-                    break;
                 case WifiMonitor.P2P_PROV_DISC_ENTER_PIN_EVENT:
                 case WifiMonitor.P2P_PROV_DISC_SHOW_PIN_EVENT:
                     WifiP2pProvDiscEvent provDisc = (WifiP2pProvDiscEvent) message.obj;
@@ -2749,7 +2745,7 @@ public final class WifiP2pServiceImpl extends IWifiP2pManager.Stub {
         // Remove only the peer we failed to connect to so that other devices discovered
         // that have not timed out still remain in list for connection
         boolean peersChanged = mPeers.remove(mPeersLostDuringConnection);
-        if (mSavedPeerConfig.deviceAddress != null &&
+        if (TextUtils.isEmpty(mSavedPeerConfig.deviceAddress) == false &&
                 mPeers.remove(mSavedPeerConfig.deviceAddress) != null) {
             peersChanged = true;
         }
