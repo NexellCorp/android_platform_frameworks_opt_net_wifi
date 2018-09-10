@@ -93,9 +93,15 @@ public class WifiNanNative {
         }
     }
 
-    /* package */ static native int initNanHandlersNative(Object cls, int iface);
+    // #<{(| package |)}># static native int initNanHandlersNative(Object cls, int iface);
+    /* package */ static int initNanHandlersNative(Object cls, int iface) {
+        return 0;
+    }
 
-    private static native int getCapabilitiesNative(short transactionId, Object cls, int iface);
+    // private static native int getCapabilitiesNative(short transactionId, Object cls, int iface);
+    private static int getCapabilitiesNative(short transactionId, Object cls, int iface) {
+        return 0;
+    }
 
     private boolean isNanInit(boolean tryToInit) {
         if (!tryToInit || sNanNativeInit) {
@@ -133,8 +139,12 @@ public class WifiNanNative {
         // do nothing
     }
 
-    private static native int enableAndConfigureNative(short transactionId, Object cls, int iface,
-            ConfigRequest configRequest);
+    // private static native int enableAndConfigureNative(short transactionId, Object cls, int iface,
+    //         ConfigRequest configRequest);
+    private static int enableAndConfigureNative(short transactionId, Object cls, int iface,
+            ConfigRequest configRequest) {
+        return 0;
+    }
 
     public void enableAndConfigure(short transactionId, ConfigRequest configRequest) {
         boolean success;
@@ -157,7 +167,10 @@ public class WifiNanNative {
         // TODO: do something on !success - send failure message back
     }
 
-    private static native int disableNative(short transactionId, Object cls, int iface);
+    // private static native int disableNative(short transactionId, Object cls, int iface);
+    private static int disableNative(short transactionId, Object cls, int iface) {
+        return 0;
+    }
 
     public void disable(short transactionId) {
         boolean success;
@@ -178,9 +191,14 @@ public class WifiNanNative {
         // TODO: do something on !success - send failure message back
     }
 
-    private static native int publishNative(short transactionId, int publishId, Object cls,
+    // private static native int publishNative(short transactionId, int publishId, Object cls,
+    //         int iface,
+    //         PublishData publishData, PublishSettings publishSettings);
+    private static int publishNative(short transactionId, int publishId, Object cls,
             int iface,
-            PublishData publishData, PublishSettings publishSettings);
+            PublishData publishData, PublishSettings publishSettings) {
+        return 0;
+    }
 
     public void publish(short transactionId, int publishId, PublishData publishData,
             PublishSettings publishSettings) {
@@ -207,8 +225,12 @@ public class WifiNanNative {
         // TODO: do something on !success - send failure message back
     }
 
-    private static native int subscribeNative(short transactionId, int subscribeId, Object cls,
-            int iface, SubscribeData subscribeData, SubscribeSettings subscribeSettings);
+    // private static native int subscribeNative(short transactionId, int subscribeId, Object cls,
+    //         int iface, SubscribeData subscribeData, SubscribeSettings subscribeSettings);
+    private static int subscribeNative(short transactionId, int subscribeId, Object cls,
+            int iface, SubscribeData subscribeData, SubscribeSettings subscribeSettings) {
+        return 0;
+    }
 
     public void subscribe(short transactionId, int subscribeId, SubscribeData subscribeData,
             SubscribeSettings subscribeSettings) {
@@ -235,8 +257,12 @@ public class WifiNanNative {
         // TODO: do something on !success - send failure message back
     }
 
-    private static native int sendMessageNative(short transactionId, Object cls, int iface,
-            int pubSubId, int requestorInstanceId, byte[] dest, byte[] message, int messageLength);
+    // private static native int sendMessageNative(short transactionId, Object cls, int iface,
+    //         int pubSubId, int requestorInstanceId, byte[] dest, byte[] message, int messageLength);
+    private static int sendMessageNative(short transactionId, Object cls, int iface,
+            int pubSubId, int requestorInstanceId, byte[] dest, byte[] message, int messageLength) {
+        return 0;
+    }
 
     public void sendMessage(short transactionId, int pubSubId, int requestorInstanceId, byte[] dest,
             byte[] message, int messageLength) {
@@ -266,8 +292,12 @@ public class WifiNanNative {
         // TODO: do something on !success - send failure message back
     }
 
-    private static native int stopPublishNative(short transactionId, Object cls, int iface,
-            int pubSubId);
+    // private static native int stopPublishNative(short transactionId, Object cls, int iface,
+    //         int pubSubId);
+    private static int stopPublishNative(short transactionId, Object cls, int iface,
+            int pubSubId) {
+        return 0;
+    }
 
     public void stopPublish(short transactionId, int pubSubId) {
         boolean success;
@@ -292,8 +322,12 @@ public class WifiNanNative {
         // TODO: do something on !success - send failure message back
     }
 
-    private static native int stopSubscribeNative(short transactionId, Object cls, int iface,
-            int pubSubId);
+    // private static native int stopSubscribeNative(short transactionId, Object cls, int iface,
+    //         int pubSubId);
+    private static int stopSubscribeNative(short transactionId, Object cls, int iface,
+            int pubSubId) {
+        return 0;
+    }
 
     public void stopSubscribe(short transactionId, int pubSubId) {
         boolean success;
