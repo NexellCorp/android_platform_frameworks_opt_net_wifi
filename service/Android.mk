@@ -75,7 +75,9 @@ LOCAL_REQUIRED_MODULES := \
 	cacerts_wfa
 LOCAL_MODULE_TAGS :=
 LOCAL_MODULE := wifi-service
+ifeq ($(NEXELL_QUICKBOOT), false)
 LOCAL_INIT_RC := wifi-events.rc
+endif
 
 LOCAL_DEX_PREOPT_APP_IMAGE := false
 LOCAL_DEX_PREOPT_GENERATE_PROFILE := true
