@@ -75,7 +75,7 @@ LOCAL_REQUIRED_MODULES := \
 	cacerts_wfa
 LOCAL_MODULE_TAGS :=
 LOCAL_MODULE := wifi-service
-ifeq ($(NEXELL_QUICKBOOT), false)
+ifeq ($(WIFI_SERVICE_QUICKBOOT), false)
 LOCAL_INIT_RC := wifi-events.rc
 endif
 
